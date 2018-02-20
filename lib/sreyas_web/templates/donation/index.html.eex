@@ -1,0 +1,36 @@
+<h2>Listing Donations</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Donor</th>
+      <th>Donation program</th>
+      <th>Amount</th>
+      <th>Payment method</th>
+      <th>Donation notes</th>
+      <th>Username</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for donation <- @donations do %>
+    <tr>
+      <td><%= donation.donor_id %></td>
+      <td><%= donation.donation_program_id %></td>
+      <td><%= donation.amount %></td>
+      <td><%= donation.payment_method %></td>
+      <td><%= donation.donation_notes %></td>
+      <td><%= donation.username %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: donation_path(@conn, :show, donation), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: donation_path(@conn, :edit, donation), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: donation_path(@conn, :delete, donation), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Donation", to: donation_path(@conn, :new) %></span>

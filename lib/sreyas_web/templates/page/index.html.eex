@@ -1,0 +1,4 @@
+<div class="jumbotron">
+  <h2><%= gettext "Welcome to Sreyas!" %></h2>
+  <p class="lead">Contributions for Your Ultimate Benefit.</p>
+</div>

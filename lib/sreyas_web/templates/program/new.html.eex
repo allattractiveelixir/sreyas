@@ -1,0 +1,5 @@
+<h2>New Program</h2>
+
+<%= render "form.html", Map.put(assigns, :action, program_path(@conn, :create)) %>
+
+<span><%= link "Back", to: program_path(@conn, :index) %></span>

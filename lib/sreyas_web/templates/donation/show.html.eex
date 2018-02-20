@@ -1,0 +1,38 @@
+<h2>Show Donation</h2>
+
+<ul>
+
+  <li>
+    <strong>Donor:</strong>
+    <%= @donation.donor_id %>
+  </li>
+
+  <li>
+    <strong>Donation program:</strong>
+    <%= @donation.donation_program_id %>
+  </li>
+
+  <li>
+    <strong>Amount:</strong>
+    <%= @donation.amount %>
+  </li>
+
+  <li>
+    <strong>Payment method:</strong>
+    <%= @donation.payment_method %>
+  </li>
+
+  <li>
+    <strong>Donation notes:</strong>
+    <%= @donation.donation_notes %>
+  </li>
+
+  <li>
+    <strong>Username:</strong>
+    <%= @donation.username %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: donation_path(@conn, :edit, @donation) %></span>
+<span><%= link "Back", to: donation_path(@conn, :index) %></span>

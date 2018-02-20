@@ -1,0 +1,47 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :category, class: "control-label" %>
+    <%= text_input f, :category, class: "form-control" %>
+    <%= error_tag f, :category %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :seva_name, class: "control-label" %>
+    <%= text_input f, :seva_name, class: "form-control" %>
+    <%= error_tag f, :seva_name %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :seva_description, class: "control-label" %>
+    <%= text_input f, :seva_description, class: "form-control" %>
+    <%= error_tag f, :seva_description %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :seva_details, class: "control-label" %>
+    <%= textarea f, :seva_details, class: "form-control" %>
+    <%= error_tag f, :seva_details %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :goal, class: "control-label" %>
+    <%= number_input f, :goal, step: "any", class: "form-control" %>
+    <%= error_tag f, :goal %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :preset_amount, class: "control-label" %>
+    <%= number_input f, :preset_amount, step: "any", class: "form-control" %>
+    <%= error_tag f, :preset_amount %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

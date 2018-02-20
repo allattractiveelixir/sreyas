@@ -1,0 +1,63 @@
+<h2>Show Donor</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @donor.name %>
+  </li>
+
+  <li>
+    <strong>Spiritual name:</strong>
+    <%= @donor.spiritual_name %>
+  </li>
+
+  <li>
+    <strong>Phone:</strong>
+    <%= @donor.phone %>
+  </li>
+
+  <li>
+    <strong>Address 1:</strong>
+    <%= @donor.address_1 %>
+  </li>
+
+  <li>
+    <strong>Address 2:</strong>
+    <%= @donor.address_2 %>
+  </li>
+
+  <li>
+    <strong>City:</strong>
+    <%= @donor.city %>
+  </li>
+
+  <li>
+    <strong>State:</strong>
+    <%= @donor.state %>
+  </li>
+
+  <li>
+    <strong>Zip:</strong>
+    <%= @donor.zip %>
+  </li>
+
+  <li>
+    <strong>Country:</strong>
+    <%= @donor.country %>
+  </li>
+
+  <li>
+    <strong>Notes:</strong>
+    <%= @donor.notes %>
+  </li>
+
+  <li>
+    <strong>Username:</strong>
+    <%= @donor.username %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: donor_path(@conn, :edit, @donor) %></span>
+<span><%= link "Back", to: donor_path(@conn, :index) %></span>

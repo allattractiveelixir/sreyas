@@ -1,0 +1,38 @@
+<h2>Show Program</h2>
+
+<ul>
+
+  <li>
+    <strong>Category:</strong>
+    <%= @program.category %>
+  </li>
+
+  <li>
+    <strong>Seva name:</strong>
+    <%= @program.seva_name %>
+  </li>
+
+  <li>
+    <strong>Seva description:</strong>
+    <%= @program.seva_description %>
+  </li>
+
+  <li>
+    <strong>Seva details:</strong>
+    <%= @program.seva_details %>
+  </li>
+
+  <li>
+    <strong>Goal:</strong>
+    <%= @program.goal %>
+  </li>
+
+  <li>
+    <strong>Preset amount:</strong>
+    <%= @program.preset_amount %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: program_path(@conn, :edit, @program) %></span>
+<span><%= link "Back", to: program_path(@conn, :index) %></span>

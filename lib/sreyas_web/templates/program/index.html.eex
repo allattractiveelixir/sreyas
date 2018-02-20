@@ -1,0 +1,36 @@
+<h2>Listing Programs</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Seva name</th>
+      <th>Seva description</th>
+      <th>Seva details</th>
+      <th>Goal</th>
+      <th>Preset amount</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for program <- @programs do %>
+    <tr>
+      <td><%= program.category %></td>
+      <td><%= program.seva_name %></td>
+      <td><%= program.seva_description %></td>
+      <td><%= program.seva_details %></td>
+      <td><%= program.goal %></td>
+      <td><%= program.preset_amount %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: program_path(@conn, :show, program), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: program_path(@conn, :edit, program), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: program_path(@conn, :delete, program), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Program", to: program_path(@conn, :new) %></span>

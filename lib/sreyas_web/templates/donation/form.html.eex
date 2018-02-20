@@ -1,0 +1,47 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= label f, :donor_id, class: "control-label" %>
+    <%= number_input f, :donor_id, class: "form-control" %>
+    <%= error_tag f, :donor_id %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :donation_program_id, class: "control-label" %>
+    <%= select f, :donation_program_id, @donation_program_list, class: "form-control" %>
+    <%= error_tag f, :donation_program_id %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :amount, class: "control-label" %>
+    <%= number_input f, :amount, step: "any", class: "form-control" %>
+    <%= error_tag f, :amount %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :payment_method, class: "control-label" %>
+    <%= text_input f, :payment_method, class: "form-control" %>
+    <%= error_tag f, :payment_method %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :donation_notes, class: "control-label" %>
+    <%= textarea f, :donation_notes, class: "form-control" %>
+    <%= error_tag f, :donation_notes %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :username, class: "control-label" %>
+    <%= text_input f, :username, class: "form-control" %>
+    <%= error_tag f, :username %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

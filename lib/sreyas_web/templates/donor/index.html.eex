@@ -1,0 +1,46 @@
+<h2>Listing Donors</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Spiritual name</th>
+      <th>Phone</th>
+      <th>Address 1</th>
+      <th>Address 2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Country</th>
+      <th>Notes</th>
+      <th>Username</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for donor <- @donors do %>
+    <tr>
+      <td><%= donor.name %></td>
+      <td><%= donor.spiritual_name %></td>
+      <td><%= donor.phone %></td>
+      <td><%= donor.address_1 %></td>
+      <td><%= donor.address_2 %></td>
+      <td><%= donor.city %></td>
+      <td><%= donor.state %></td>
+      <td><%= donor.zip %></td>
+      <td><%= donor.country %></td>
+      <td><%= donor.notes %></td>
+      <td><%= donor.username %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: donor_path(@conn, :show, donor), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: donor_path(@conn, :edit, donor), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: donor_path(@conn, :delete, donor), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Donor", to: donor_path(@conn, :new) %></span>
